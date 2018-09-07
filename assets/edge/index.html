@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=924, height=630"/>
+	<title>Sky Views Through the Seasons</title>
+	<link href="edgeStyle.css" style="text/css" rel="stylesheet"/>	
+	<link href="welactstyle.css" style="text/css" rel="stylesheet"/>	
+    <link href="../css/font.css" rel="stylesheet"/>
+	<script type='text/javascript' src='dataEdge.js'></script>
+	
+<!--Adobe Edge Runtime-->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <script type="text/javascript" charset="utf-8" src="index_edgePreload.js"></script>
+    <style>
+        .edgeLoad-EDGE-1817669 { visibility:hidden; }
+    </style>
+<!--Adobe Edge Runtime End-->
+
+</head>
+<body style="margin:0;padding:0;overflow: hidden">
+	<div id="Stage" class="EDGE-1817669">
+	<div class='wel_commonWorkArea' style="display:block;">
+	
+		<div class="Weather_Forecast">
+		<div class='audioIconClass' style="width: 4px;">
+						<img src="../images/template/audio_icon_normal.png" alt="audioButton" class="expDivIcon" id="notice" audio-state="pause" />
+		</div>
+		<span class="head">Weather Forecast</span>
+		<span class="cName">Memphis, TN</span>
+		<span class="fore_img" style="height: 50px; margin-bottom: -5px;"><img src="../images/activity/thunderstorms.png" alt="memphis"></span>
+		<span class="rep_txt">Severe thunderstorms with possible tornado activity.</span>
+		</div>
+		
+		<div class="w_dropDown" style="display:none;"> 								
+				<ul class="w_nav"> 
+				  <li id="city_0" class="menu" value="allowclick" style="background: rgb(255, 204, 0);">
+					<span>City</span>
+					<div class="arrow-down" style="transform: rotate(0deg);"></div>
+					<ul id="cty" class="submenu" style=""> 
+					  <li class="dropdown_cont" id="cty_0_0"><span>Memphis, TN</span></li>
+					  <li class="dropdown_cont" id="cty_0_1"><span>Salt Lake City, UT</span></li>
+					</ul>
+				  </li>
+				  <li id="am_1" class="menu" value="">
+					<span>Air Mass 1</span>
+					<div class="arrow-down" style="transform: rotate(0deg);"></div>
+					<ul id="am1" class="submenu"> 
+					  <li class="dropdown_cont" id="am_1_0"><span>Arctic</span></li>
+					  <li class="dropdown_cont" id="am_1_1"><span>Continental Polar</span></li>
+					  <li class="dropdown_cont" id="am_1_2"><span>Continental Tropical</span></li>
+					  <li class="dropdown_cont" id="am_1_3"><span>Maritime Tropical</span></li>
+					</ul>
+				  </li>
+				  <li id="am_2" class="menu" value="">
+					<span>Air Mass 2</span>
+					<div class="arrow-down" style="transform: rotate(0deg);"></div>
+					<ul id="am2" class="submenu"> 
+					  <li class="dropdown_cont" id="am_2_0" style="color: rgb(128, 128, 128);"><span>Arctic</span></li>
+					  <li class="dropdown_cont" id="am_2_1"><span>Continental Polar</span></li>
+					  <li class="dropdown_cont" id="am_2_2"><span>Continental Tropical</span></li>
+					  <li class="dropdown_cont" id="am_2_3"><span>Maritime Tropical</span></li>
+					</ul>
+				  </li>
+				 
+				</ul>
+				
+			</div>
+			
+			<div class="airmass" id="airmass_0" style="transform: translate(534px, 122px);"><div class="dataShow"></div><span style="top: 27px;">Arctic</span><div class="main_sprite_0" style="height: 120px;width: 160px;position: absolute;	padding-right: 10px;background-image: url('images/artic_si.png');background-position: 0px 0px;text-align: center;margin-top: -14px;margin-left: -16px;"></div></div>
+			
+			<div class="airmass" id="airmass_1" style="transform: translate(301px, 183px);"><div class="dataShow"></div><span>Continental Polar</span><div class="main_sprite_1" style="height: 120px;width: 160px;position: absolute;	padding-right: 10px;background-image: url('images/continental_polar_si.png');background-position: 0px 0px;text-align: center;margin-top: -15px;margin-left: -14px;"></div></div>
+			
+			<div class="airmass" id="airmass_2" style="transform: translate(696px, 492px);"><div class="dataShow"></div><span>Maritime Tropical</span><div class="main_sprite_2" style="height: 120px;width: 160px;position: absolute;padding-right: 10px;background-image: url('images/maritime_tropical_si.png');background-position: 0px 0px;text-align: center;margin-top: -17px;margin-left: -17px;"></div></div>
+			
+			<div class="airmass" id="airmass_3" style="transform: translate(350px, 435px);"><div class="dataShow"></div><span>Continental Tropical</span><div class="main_sprite_3" style="height: 120px;width: 160px;position: absolute;	padding-right: 10px;background-image: url('images/continental_tropical_si.png');background-position: 0px 0px;text-align: center;margin-top: -20px;margin-left: -16px;"></div></div>
+			
+			
+			<div class="cities"><div id="memphis" class="ShowIt" style="display:none;"><span class="city"> </span><span class="cityName" style="background: rgb(255, 255, 255); color: rgb(0, 0, 0);">Memphis, TN</span></div><div id="salt" class="hideIt" style="display: none;"><span class="city1"> </span><span class="cityName">Salt Lake City, UT</span></div></div>
+			
+			<div id="collide" class="w_bottomButton" style="background: #6d6e71; color: #c7c8ca; cursor: default;display:none;">Move Air Masses</div>
+			
+			<div class="instrumentsPopup" style="display:none;"><div class="memphis_arrowDiv_0"></div><div class="closePopup"></div><div class="masstitle">Arctic</div><div class="instruments"><div class="thermometer"><div class="thermometer_reading"><div class="thermometer_pointer" style="clip: rect(0px, 10px, 11.5px, 0px);"></div></div><div class="labelText">Temperature</div><div class="labelTextVal">−17°C</div></div><div class="hygrometer"><div class="hygrometer_reading"><div class="hygrometer_pointer" style="transform: rotate(-95deg);"></div></div><div class="labelText">Humidity</div><div class="labelTextVal">15%</div></div><div class="barometer"><div class="barometer_reading"><div class="barometer_pointer" style="transform: rotate(78deg);"></div><div class="barometer_ind_sec"></div></div><div class="labelText">Air pressure</div><div class="labelTextVal">1040 millibars</div></div><div class="wine_vane"><div class="vane_reading"><div class="vane_pointer" style="transform: rotate(45deg);"></div><div class="vane_mph">5 mph</div></div><div class="labelText">Wind</div><div class="labelTextVal">NE 5 mph</div></div></div><div class="instrumentsReadings"></div></div>
+			
+			
+			<div class="instrumentsPopup1"><div class="memphis_arrowDiv_1"></div><div class="closePopup"></div><div class="masstitle">Continental Polar</div><div class="instruments"><div class="thermometer"><div class="thermometer_reading"><div class="thermometer_pointer" style="clip: rect(0px, 10px, 24.5px, 0px);"></div></div><div class="labelText">Temperature</div><div class="labelTextVal">5°C</div></div><div class="hygrometer"><div class="hygrometer_reading"><div class="hygrometer_pointer" style="transform: rotate(0deg);"></div></div><div class="labelText">Humidity</div><div class="labelTextVal">50%</div></div><div class="barometer"><div class="barometer_reading"><div class="barometer_pointer" style="transform: rotate(51deg);"></div><div class="barometer_ind_sec"></div></div><div class="labelText">Air pressure</div><div class="labelTextVal">1030 millibars</div></div><div class="wine_vane"><div class="vane_reading"><div class="vane_pointer" style="transform: rotate(315deg);"></div><div class="vane_mph">35 mph</div></div><div class="labelText">Wind</div><div class="labelTextVal">NW 35 mph</div></div></div><div class="instrumentsReadings"></div></div>
+			
+		</div>
+	</div>
+</body>
+</html>

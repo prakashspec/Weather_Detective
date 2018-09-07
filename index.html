@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no">
+<title>Weather Detective</title>
+<link href="assets/css/font.css" rel="stylesheet"/>
+<link href="assets/css/template.css" rel="stylesheet"/>
+<link href="assets/css/actstyle.css" rel="stylesheet"/>
+<link href="assets/scrollbar/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+<script src="assets/js/jquery-1.11.0.min.js"></script>
+<script src="assets/js/jquery.transform2d.js"></script>
+<script src="assets/js/rotate.js"></script>
+<script src="assets/js/jquery-ui.min.js"></script>
+<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="assets/js/html2canvas.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/eventjs.js"></script>
+<script src="assets/js/activity.js"></script>
+<script src="assets/js/slider.js"></script>
+<script src="assets/js/sprite.js"></script>
+<script src="assets/js/jquery.preload.js"></script>
+
+<script>
+	$(function(){
+		var imgs = [
+		    'assets/images/activity/welcome_bg.png',
+			'assets/images/activity/bg.png',
+		    'assets/images/activity/artic.png',
+		    'assets/images/activity/continental_polar.png',
+		    'assets/images/activity/maritime_tropical.png',
+		    'assets/images/activity/continental_tropical.png',
+		    'assets/images/template/info_icon.png',
+			'assets/images/template/close.png',
+			'assets/images/template/rslider.png',
+			'assets/images/template/audio_icon_normal.png',
+			'assets/images/template/audio_icon_play.png',
+			'assets/images/template/camera_icon.png',
+			'assets/images/template/camera_icon_disabled.png',
+			'assets/images/template/left_slider_act.png',
+			'assets/images/template/left_slider_deact.png',
+			'assets/images/help/audio_icon.png',
+		    'assets/images/template/lslider.png',
+			'assets/images/template/ok_btn.png',
+			'assets/images/template/ok_btn_active.png',
+			'assets/images/template/ok_btn_clkd.png',			
+			'assets/images/template/reset-01.png',			
+			'assets/images/template/right_slider_act.png',
+			'assets/images/template/right_slider_deact.png',
+			'assets/images/help/camera_icon.png',
+			'assets/images/help/info_icon.png'
+		 ];		
+		$.preload(imgs, {
+		    each: function (count) {
+				//
+		    },
+		    all: function () {
+				$('.screenArea').css('display','block');				
+			    $('.screenload').css('display','none');
+			    $('.preloaderImg').css('display','none');				
+			    $('#myFrame').css('display','block');				
+					   var Mytimeout= setTimeout(function(){
+					console.clear();
+					clearTimeout(Mytimeout);
+				},500);
+				
+		    }
+		});
+	});
+</script>
+
+</head>
+<body>
+<div class="container">
+ 	<div class="header">
+    	<span class="activity_title"></span>
+		<span class="infoIcon"></span>
+        <span id="rtxt_1" name="welcome" class="rtxt welcome">Welcome</span>
+        <span id="rtxt_2" name="explore" class="rtxt explore">Explore</span>
+        <span id="rtxt_3" name="activity" class="rtxt activity">Activity</span>
+    </div>
+	<img src="assets/edge/images/bg_blur.png" width="924px" height="588px" style="position: absolute;top:42px;z-index:0"/> 
+	<div class="screenArea" audio-mode="off" style="display:block">
+				
+		<!-- Welcome Page -->
+		<div id="welcome" class="workArea">
+			<iframe src="assets/edge/index.html" id="myFrame" width="924" height="588" scroll="no" style="border:none"></iframe>			
+		</div>
+		<div class="bubbleDiv"></div>
+	
+		<!--Audio Div -->
+		<div class="expDiv">		
+			<div class="headerDrag"><div>&equiv;</div></div>			
+			<div class="expChild">			
+				<div class="expimgcont" id="expimgcont" style="display: block;">
+					<img class='popupImages' width="180px" draggable="false" style="border-radius:12px;" src="assets/images/activity/test.png">
+				</div> 
+				<div class='audioTextDiv helpAudio'>
+					<div class='audioIconClass'>
+						<img src="assets/images/template/audio_icon_normal.png" alt="audioButton" class="expDivIcon expAudio" id="testmp" audio-state="pause" />
+					</div>
+					<p class="expPara" >
+						Test...
+					</p>
+				</div>
+			</div>
+			<div class="expFoodBar">
+				<div class="PreBtnSlider navSliderBtn" data-attend="0"></div>
+				<span style="width:42px"></span>
+				<div class="nxtBtnSlider navSliderBtn" data-attend="0"></div>
+			</div>
+			<img src="assets/images/template/lslider.png"  class="activeSlider" alt="Slide Animation" />
+		</div>
+		<div class="sliderContain"></div>
+		<div class="Weather_Forecast">
+		<div class='audioIconClass' style="width: 4px;">
+						<img src="assets/images/template/audio_icon_normal.png" alt="audioButton" class="expDivIcon expAudio" id="notice" audio-state="pause" />
+		</div>
+		<span class="head"></span>
+		<span class="cName"></span>
+		<span class="fore_img"></span>
+		<span class="rep_txt"></span>
+		</div>
+		
+		<div class="dropDown"> 								
+				<ul class="nav"> 
+				  <li id="city_0" class="menu" value="allowclick">
+					<span>City</span>
+					<div class="arrow-down" style="transform: rotate(0deg);"></div>
+					<ul id="cty" class="submenu" style=""> 
+					  <li class="dropdown_cont" id="cty_0_0"><span>Memphis, TN</span></li>
+					  <li class="dropdown_cont" id="cty_0_1"><span>Salt Lake City, UT</span></li>
+					</ul>
+				  </li>
+				  <li id="am_1" class="menu" value="">
+					<span>Air Mass 1</span>
+					<div class="arrow-down" style="transform: rotate(0deg);"></div>
+					<ul id="am1" class="submenu"> 
+					  <li class="dropdown_cont" id="am_1_0"><span>Arctic</span></li>
+					  <li class="dropdown_cont" id="am_1_1"><span>Continental Polar</span></li>
+					  <li class="dropdown_cont" id="am_1_2"><span>Continental Tropical</span></li>
+					  <li class="dropdown_cont" id="am_1_3"><span>Maritime Tropical</span></li>
+					</ul>
+				  </li>
+				  <li id="am_2" class="menu" value="">
+					<span>Air Mass 2</span>
+					<div class="arrow-down" style="transform: rotate(0deg);"></div>
+					<ul id="am2" class="submenu"> 
+					  <li class="dropdown_cont" id="am_2_0"><span>Arctic</span></li>
+					  <li class="dropdown_cont" id="am_2_1"><span>Continental Polar</span></li>
+					  <li class="dropdown_cont" id="am_2_2"><span>Continental Tropical</span></li>
+					  <li class="dropdown_cont" id="am_2_3"><span>Maritime Tropical</span></li>
+					</ul>
+				  </li>
+				 
+				</ul>
+				
+			</div>
+		<!--Explore Page -->
+		<div class='commonWorkArea'>
+		
+		</div>
+		<div id="explore" class="workArea" data-class="explore">			
+		</div>
+		<div id="activity" class="workArea" data-class="activity" style="display:none">			
+		</div> 
+		<!--Right Tab Menu -->
+		<div class="Modes">
+			<div class="rightGrpBtn">	
+				<div class="rightlabel1 labelRight labelArrow" id="rightlabel_1"></div>			
+				<div class="rightlabel2 labelRight" id="rightlabel_2"></div>
+			</div>
+		</div>
+		
+		<!--Menu Tab  -->
+		<div class="highlightTab">
+			<div class="button chheader1" bubble="monterey" id="ch1" data-show="1"></div>
+			<div class="button chheader2" bubble="amazon" id="ch2" data-show="2"></div>
+		</div>
+		
+		
+		<div class="helpwindow">
+			<div class="helpinner">
+				<div class="helpBlockTopWhite" style="z-index: 9;height:10px;width:555px;position:absolute;background:white;top:152px"></div>
+			    <div class="help1" data-class="lclass">Background Information</div>
+				<div class="help2" data-class="rclass">Help</div>
+				<div class="helpBlock1"></div>
+				<div class="helpBlock2"></div>
+				<img src="assets/images/template/close.png" alt="closeButton" class="closeIcon"/>
+				<div class="helpBlockBotWhite" style="z-index: 9;height:10px;width:555px;position:absolute;background:white;bottom:104px"></div>
+			</div>
+		</div>	
+		
+	</div>
+	<div style="position:absolute;width:924px;height:588px;top:42px;background:rgba(0,0,0,0.5);display: block" class="screenload"></div>
+	<img class="preloaderImg" src="assets/images/template/preloader2.gif" width="62px" style="position:absolute;left:0;top:0; right:0; bottom:0; margin:auto;z-index:1;display: block"/>
+	<div class="screenIcon" >	</div>
+	</div>
+</body>
+
+</html>
+
